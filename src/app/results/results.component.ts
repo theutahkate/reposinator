@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { GithubDataService } from '../github-data.service';
 
 @Component({
   selector: 'app-results',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results.component.scss']
 })
 export class ResultsComponent implements OnInit {
+  repos;
 
-  constructor() { }
+  constructor(
+    private githubData: GithubDataService
+  ) { }
 
   ngOnInit() {
+    this.githubData
+      .getJSON()
+      .subscribe(data => {
+        this.repos = data.items
+        console.log(this.repos)
+      })
   }
-
 }
