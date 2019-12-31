@@ -1,13 +1,22 @@
 <div class="card">
-  <h2 class="heading__h2">
-    <a href="#" class="a__default">
-      {{ repo.name }}
-    </a>
-  </h2>
-  <p>Author: {{ repo.owner.login }}</p>
-  <p>Star Count: {{ repo.stargazers_count }}</p>
-  <p>{{ repo.description }}</p>
-  <a href="#" class="btn">
+  <div class="card--heading">
+    <div class="card--heading__avatar">
+      <img src="" alt="avatar for repository author {{ repo.owner.login }}">
+    </div>
+    <div class="card--heading__content">
+      <h2 class="heading--tier-2">
+        <a href="#" class="a--default">
+          {{ repo.name }}
+        </a>
+      </h2>
+      <p>Author: {{ repo.owner.login }}</p>
+    </div>
+  </div>
+  <p class="stars">Star Count: {{ repo.stargazers_count }}</p>
+  <div class="card--desc">
+    <p>{{ repo.description }}</p>
+  </div>
+  <a href="#" class="btn--default">
     Recent Commits
     <span class="sr-only">
        for {{ repo.name }}
