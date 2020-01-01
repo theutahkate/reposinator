@@ -13,6 +13,7 @@ body {
   background-color: $primary;
   font-size: 1.6rem;
   font-weight: 300;
+  color: $text-default;
 }
 
 .sr-only {
@@ -35,4 +36,8 @@ body {
 .text-light,
 .text-light .a--default {
   color: $white;
+}
+
+.text-bold {
+  font-weight: bold;
 }

@@ -1,3 +1,1 @@
-<div *ngFor="let repo of repos">
-  <app-card [repo]="repo" ></app-card>
-</div>
+<app-card [repo]="repo" *ngFor="let repo of repos"></app-card>
