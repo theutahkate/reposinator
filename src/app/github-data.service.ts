@@ -12,8 +12,7 @@ export class GithubDataService {
   ) { }
 
   getJSON(): Observable<any> {
-    // TO DO: get 100 results
-    const url = "https://api.github.com/search/repositories?q=stars%3A>%3D10000";
+    const url = "https://api.github.com/search/repositories?q=stars%3A>%3D10000&per_page=100";
     return this.http.get(url)
   }
 
