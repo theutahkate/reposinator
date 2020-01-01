@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Muli:300,400&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Muli:300,400,700&display=swap');
 
 html {
   font-size: 62.5%;
@@ -7,7 +7,7 @@ html {
 
 body {
   max-width: 100rem;
-  font-family: Muli, Arial, Helvetica, sans-serif;
+  font-family: $font-family-main;
   margin: 0 auto;
   padding: 3rem;
   background-color: $primary;
@@ -27,14 +27,7 @@ body {
   border: 0;
 }
 
-.a--default {
-  text-decoration: none;
-  color: $text-default;
-  font-weight: normal;
-}
-
-.text-light,
-.text-light .a--default {
+.text-light {
   color: $white;
 }
 

@@ -2,15 +2,16 @@
 
 //TO DO: rename
 .heading--tier-2 {
-  font-family: Merriweather, Georgia, 'Times New Roman', Times, serif;
+  font-family: $font-family-display;
   font-weight: 600;
   font-size: 2.5rem;
 }
 
 .card {
-  margin-bottom: 1rem;
+  position: relative;
   padding: 1rem;
   background-color: $white;
+  border-radius: 0.4rem;
   -webkit-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.75);
@@ -21,7 +22,53 @@
   padding-bottom: 1rem;
   border-bottom: 0.1rem solid;
 }
+
+.card--heading__link {
+  text-decoration: none;
+  color: $text-default;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.icon-link {
+  display: inline;
+  width: 1.5rem;
+}
+
 .card--heading__subhead {
   line-height: 1;
   font-size: 1.3rem;
+  color: $gray;
+}
+
+.card--desc {
+  margin-bottom: 6rem;
+}
+
+.card--btn-link {
+  position: absolute;
+  width: calc(100% - 2rem);
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1rem;
+  background-color: $tertiary;
+  color: $white;
+  border: 0.2rem solid transparent;
+  border-radius: 0.4rem;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  font-family: $font-family-display;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0, 0, 0, 0.75);
+
+  &:hover {
+    background-color: $white;
+    color: $text-default;
+    border-color: $tertiary;
+  }
 }

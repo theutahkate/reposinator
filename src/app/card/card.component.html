@@ -1,8 +1,10 @@
 <div class="card" fxFlex="1 1 30rem">
   <div class="card--heading">
     <h2 class="heading--tier-2">
-      <a href="#" class="a--default">
+      <a href="#" target="_blank" class="card--heading__link">
         {{ repo.name }}
+        <img src="/assets/img/icon-link.svg" alt="" class="icon-link">
+        <span class="sr-only">opens in new tab</span>
       </a>
     </h2>
     <p class="card--heading__subhead"><span class="text-bold">Author:</span> {{ repo.owner.login }}</p>
@@ -11,7 +13,7 @@
   <div class="card--desc">
     <p>{{ repo.description }}</p>
   </div>
-  <a href="#" class="btn--default">
+  <a href="#" class="card--btn-link">
     Recent Commits
     <span class="sr-only">
        for {{ repo.name }}
