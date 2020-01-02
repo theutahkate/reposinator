@@ -43,11 +43,7 @@
   color: $gray;
 }
 
-.card--desc {
-  margin-bottom: 6rem;
-}
-
-.card--btn-link {
+.card--btn {
   position: absolute;
   width: calc(100% - 2rem);
   bottom: 1rem;
@@ -71,4 +67,10 @@
     color: $text-default;
     border-color: $tertiary;
   }
+}
+
+.card--commit-list {
+  list-style-type: none;
+  padding-bottom: 0;
+  margin: 3rem 0 6rem;
 }

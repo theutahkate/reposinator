@@ -15,10 +15,9 @@ export class ResultsComponent implements OnInit {
 
   ngOnInit() {
     this.githubData
-      .getJSON()
+      .getReposJSON()
       .subscribe(data => {
         this.repos = data.items
-        console.log(this.repos)
       })
   }
 }

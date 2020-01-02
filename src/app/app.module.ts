@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { ResultsComponent } from './results/results.component';
 import { CardComponent } from './card/card.component';
+import { CommitsComponent } from './commits/commits.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavComponent,
     ResultsComponent,
-    CardComponent
+    CardComponent,
+    CommitsComponent
   ],
   imports: [
     BrowserModule,

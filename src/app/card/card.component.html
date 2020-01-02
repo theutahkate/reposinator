@@ -1,4 +1,4 @@
-<div class="card" fxFlex="1 1 30rem">
+<div class="card" fxFlex="1 1 45rem">
   <div class="card--heading">
     <h2 class="heading--tier-2">
       <a href="#" target="_blank" class="card--heading__link">
@@ -13,10 +13,13 @@
   <div class="card--desc">
     <p>{{ repo.description }}</p>
   </div>
-  <a href="#" class="card--btn-link">
+  <ul class="card--commit-list">
+    <app-commits [commit]="commit" *ngFor="let commit of commits"></app-commits>
+  </ul>
+  <button class="card--btn" (click)="getCommits(repo.owner.login, repo.name)">
     Recent Commits
     <span class="sr-only">
        for {{ repo.name }}
     </span>
-  </a>
+  </button>
 </div>

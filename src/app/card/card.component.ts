@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { GithubDataService } from '../github-data.service';
 
 @Component({
   selector: 'app-card',
@@ -6,11 +7,24 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  commits;
   @Input() repo;
 
-  constructor() { }
+  constructor(
+    private githubData: GithubDataService
+  ) { }
 
   ngOnInit() {
   }
 
+  getCommits(owner, repoName) {
+    this.githubData
+      .getCommitsJSON(owner, repoName)
+      .subscribe(data => {
+        data.forEach(element => {
+          element.commit.author.date = element.commit.author.date.replace(/T/, ' ').slice(0,-1)
+        });
+        this.commits = data
+      })
+  }
 }
