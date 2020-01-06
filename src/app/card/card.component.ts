@@ -8,6 +8,7 @@ import { GithubDataService } from '../github-data.service';
 })
 export class CardComponent implements OnInit {
   commits;
+  hasCommits = true;
   @Input() repo;
 
   constructor(
@@ -25,6 +26,9 @@ export class CardComponent implements OnInit {
           element.commit.author.date = element.commit.author.date.replace(/T/, ' ').slice(0,-1)
         });
         this.commits = data
+        if (this.commits.length <= 0) {
+          this.hasCommits = false;
+        }
       })
   }
 }

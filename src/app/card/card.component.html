@@ -13,10 +13,14 @@
   <div class="card--desc">
     <p>{{ repo.description }}</p>
   </div>
-  <ul class="card--commit-list">
+  <ul class="card--commit-list" *ngIf="hasCommits; else elseBlock">
     <app-commits [commit]="commit" *ngFor="let commit of commits"></app-commits>
   </ul>
-  <button class="card--btn" (click)="getCommits(repo.owner.login, repo.name)">
+  <ng-template #elseBlock>
+    <p class="card--no-commits">No commits in the last 24 hours</p>
+  </ng-template>
+
+  <button class="card--btn" (click)="getCommits(repo.owner.login, repo.name)" *ngIf="hasCommits">
     Recent Commits
     <span class="sr-only">
        for {{ repo.name }}
