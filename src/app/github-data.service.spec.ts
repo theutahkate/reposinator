@@ -89,7 +89,8 @@ describe('GithubDataService', async () => {
     expect(httpClientSpy.get.calls.count()).toBe(1, 'one call');
   }));
 
-  fit('should return an error when the server returns a 404', inject([HttpTestingController, GithubDataService], async (service: GithubDataService) => {
+  it('should return an error when the server returns a 404', inject([HttpTestingController, GithubDataService], async (service: GithubDataService) => {
+    httpClientSpy = jasmine.createSpyObj('HttpClient', ['get']);
     service = new GithubDataService(<any>httpClientSpy);
 
     const errorResponse = new HttpErrorResponse({

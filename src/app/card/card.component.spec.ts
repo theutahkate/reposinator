@@ -7,7 +7,7 @@ import { GithubDataService } from '../github-data.service';
 import { CommitsComponent } from '../commits/commits.component';
 import { ResultsComponent } from '../results/results.component';
 
-fdescribe('CardComponent', () => {
+describe('CardComponent', () => {
 
   let component: CardComponent;
   let fixture: ComponentFixture<CardComponent>;
@@ -65,11 +65,11 @@ fdescribe('CardComponent', () => {
     fixture.detectChanges();
   });
 
-  fit('should create', () => {
+  it('should create', () => {
     expect(component).toBeTruthy();
   });
 
-  fit('should display the correct repository information on a card', () => {
+  it('should display the correct repository information on a card', () => {
     let ele = fixture.nativeElement
     let headingEle = ele.querySelectorAll('.card--heading__link')[0];
     let subHeadEles = ele.querySelectorAll('.card--heading__subhead');
@@ -82,7 +82,7 @@ fdescribe('CardComponent', () => {
     expect(descEle[0].innerText).toContain(mockReposData.items[0].description)
   })
 
-  fit('should trigger getCommits() on button click', async(() => {
+  it('should trigger getCommits() on button click', async(() => {
     spyOn(component, 'getCommits');
 
     let button = fixture.debugElement.nativeElement.querySelector('button');
