@@ -85,8 +85,13 @@ describe('ResultsComponent', () => {
       .toEqual(mockData.items)
   })
 
+  it('should display error when receiving an error from the error service', () => {
+    component.hasError = true;
+    component.errorMsg = "womp womp";
+    fixture.detectChanges();
 
-  // xit('should display error when call to gh fails', () => {
+    let errorEle = fixture.nativeElement.querySelector(".error-msg");
 
-  // })
+    expect(errorEle.innerText).toEqual(component.errorMsg);
+  })
 });

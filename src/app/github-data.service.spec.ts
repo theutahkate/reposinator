@@ -100,7 +100,7 @@ describe('GithubDataService', async () => {
     httpClientSpy.get.and.returnValue(asyncError(errorResponse));
 
     service.getReposJSON().subscribe(
-      data => fail('expected an error, not heroes'),
+      data => fail('expected an error, not data'),
       error => expect(error.message).toContain('404 Not Found')
     );
   }));

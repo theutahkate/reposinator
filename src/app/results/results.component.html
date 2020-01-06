@@ -1,1 +1,9 @@
 <app-card [repo]="repo" *ngFor="let repo of repos"></app-card>
+<div *ngIf="hasError">
+  <div class="error-div">
+    <h2 class="heading--tier-2">An Error Has Occurred And We Are Mortified, Of Course</h2>
+    <p class="text-bold">But do try again by refreshing the page. We are hopeful that we will be redeemed.</p>
+    <p class="error-msg">{{errorMsg}}</p>
+  </div>
+</div>
+

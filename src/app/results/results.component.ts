@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { GithubDataService } from '../github-data.service';
+import { ErrorService } from '../error.service';
 
 @Component({
   selector: 'app-results',
@@ -8,9 +9,12 @@ import { GithubDataService } from '../github-data.service';
 })
 export class ResultsComponent implements OnInit {
   repos;
+  errorMsg;
+  hasError = false;
 
   constructor(
-    private githubData: GithubDataService
+    private githubData: GithubDataService,
+    private errorService: ErrorService
   ) { }
 
   ngOnInit() {
@@ -19,5 +23,11 @@ export class ResultsComponent implements OnInit {
       .subscribe(data => {
         this.repos = data.items
       })
+    this.errorService.httpError.asObservable().subscribe(values => {
+      if (values && values != '') {
+        this.hasError = true;
+        this.errorMsg = values;
+      }
+    });
   }
 }
